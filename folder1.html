@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folder 1-13</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Daftar Orang 1-13</h1>
+        <div class="gallery" id="gallery"></div>
+    </div>
+
+    <script>
+        // Data gambar dan nama
+        const gallery = document.getElementById('gallery');
+        const people = [
+            { img: '1.jpg', name: 'Orang 1' },
+            { img: '2.jpg', name: 'Orang 2' },
+            { img: '3.jpg', name: 'Orang 3' },
+            { img: '4.jpg', name: 'Orang 4' },
+            { img: '5.jpg', name: 'Orang 5' },
+            { img: '6.jpg', name: 'Orang 6' },
+            { img: '7.jpg', name: 'Orang 7' },
+            { img: '8.jpg', name: 'Orang 8' },
+            { img: '9.jpg', name: 'Orang 9' },
+            { img: '10.jpg', name: 'Orang 10' },
+            { img: '11.jpg', name: 'Orang 11' },
+            { img: '12.jpg', name: 'Orang 12' },
+            { img: '13.jpg', name: 'Orang 13' },
+        ];
+
+        // Generate gambar dan nama secara otomatis
+        people.forEach(person => {
+            const frame = document.createElement('div');
+            frame.className = 'image-frame';
+
+            const img = document.createElement('img');
+            img.src = `images/${person.img}`;
+            img.alt = person.name;
+
+            const name = document.createElement('p');
+            name.textContent = `Nama: ${person.name}`;
+
+            frame.appendChild(img);
+            frame.appendChild(name);
+            gallery.appendChild(frame);
+        });
+    </script>
+</body>
+</html>

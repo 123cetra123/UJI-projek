@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folder 26-34</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Daftar Orang 26-34</h1>
+        <div class="gallery" id="gallery"></div>
+    </div>
+
+    <script>
+        // Data gambar dan nama untuk orang 26-34
+        const gallery = document.getElementById('gallery');
+        const people = [
+            { img: '26.jpg', name: 'Orang 26' },
+            { img: '27.jpg', name: 'Orang 27' },
+            { img: '28.jpg', name: 'Orang 28' },
+            { img: '29.jpg', name: 'Orang 29' },
+            { img: '30.jpg', name: 'Orang 30' },
+            { img: '31.jpg', name: 'Orang 31' },
+            { img: '32.jpg', name: 'Orang 32' },
+            { img: '33.jpg', name: 'Orang 33' },
+            { img: '34.jpg', name: 'Orang 34' },
+        ];
+
+        // Generate gambar dan nama secara otomatis untuk orang 26-34
+        people.forEach(person => {
+            const frame = document.createElement('div');
+            frame.className = 'image-frame';
+
+            const img = document.createElement('img');
+            img.src = `images/${person.img}`;
+            img.alt = person.name;
+
+            const name = document.createElement('p');
+            name.textContent = `Nama: ${person.name}`;
+
+            frame.appendChild(img);
+            frame.appendChild(name);
+            gallery.appendChild(frame);
+        });
+    </script>
+</body>
+</html>

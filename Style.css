@@ -1,0 +1,132 @@
+/* Gaya umum untuk halaman */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0); /* Gradien latar belakang yang cerah dan lembut */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Menyusun konten di atas */
+  flex-direction: column;
+  padding: 20px;
+  margin: 0;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* Container utama */
+.container {
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Gaya untuk judul */
+.title {
+  font-size: 3em; /* Ukuran judul lebih besar */
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333; /* Warna teks lebih gelap */
+  background-color: #ffffff; /* Latar belakang putih */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek kedalaman */
+  display: inline-block;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3); /* Efek bayangan pada teks */
+  letter-spacing: 2px; /* Spasi huruf untuk efek lebih dramatis */
+}
+
+/* Folder navigasi */
+.folders {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  gap: 20px; /* Jarak antar folder */
+}
+
+/* Desain folder dengan angka */
+.folder {
+  background-color: #ffffff; /* Latar belakang putih untuk folder */
+  color: #333; /* Warna teks gelap */
+  padding: 25px 35px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.4em;
+  font-weight: bold;
+  position: relative;
+}
+
+/* Frame untuk angka folder */
+.folder span {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffffff; /* Latar belakang putih */
+  color: #007bff; /* Warna angka biru */
+  border: 2px solid #007bff; /* Border biru di sekitar angka */
+  border-radius: 10px;
+  font-size: 1.6em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan ringan */
+}
+
+/* Efek hover pada folder */
+.folder:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Galeri gambar */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Membuat 3 kolom */
+  gap: 30px; /* Jarak antar elemen */
+  justify-items: center; /* Memusatkan konten di kolom */
+  margin-top: 20px;
+  padding-bottom: 50px;
+  position: relative; /* Posisi relatif untuk mempermudah pengaturan posisi gambar */
+}
+
+/* Frame gambar */
+.image-frame {
+  text-align: center;
+  background-color: #ffffff;
+  border: 2px solid #f1c40f; /* Border dengan warna kuning terang */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 220px;
+  overflow: hidden; /* Menyembunyikan elemen yang melebihi batas frame */
+}
+
+/* Gambar ke-11 dan ke-13 */
+.gallery .image-frame:nth-child(11) {
+  grid-column: 2 / 3; /* Menempatkan gambar ke-11 di kolom tengah */
+  grid-row: 4; /* Memastikan gambar ke-11 berada di baris ke-4 */
+}
+
+.gallery .image-frame:nth-child(13) {
+  grid-column: 2 / 3; /* Memastikan gambar ke-13 berada di kolom tengah */
+  grid-row: 5; /* Menempatkan gambar ke-13 di baris setelah gambar ke-11 */
+  justify-self: center; /* Memastikan gambar berada di tengah */
+}
+
+/* Gambar di dalam frame */
+.image-frame img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Efek hover pada gambar */
+.image-frame:hover {
+  transform: scale(1.05); /* Efek zoom saat di-hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.image-frame img:hover {
+  transform: scale(1.1); /* Gambar memperbesar saat di-hover */
+}
