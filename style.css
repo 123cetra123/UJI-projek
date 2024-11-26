@@ -40,6 +40,7 @@ body {
   justify-content: center;
   margin-bottom: 40px;
   gap: 20px; /* Jarak antar folder */
+  flex-wrap: wrap; /* Membuat elemen otomatis turun jika layar kecil */
 }
 
 /* Desain folder dengan angka */
@@ -55,6 +56,8 @@ body {
   font-size: 1.4em;
   font-weight: bold;
   position: relative;
+  max-width: 300px; /* Maksimal lebar folder */
+  text-align: center;
 }
 
 /* Frame untuk angka folder */
@@ -78,12 +81,11 @@ body {
 /* Galeri gambar */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Membuat 3 kolom */
-  gap: 30px; /* Jarak antar elemen */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Kolom responsif */
+  gap: 20px; /* Jarak antar elemen */
   justify-items: center; /* Memusatkan konten di kolom */
   margin-top: 20px;
   padding-bottom: 50px;
-  position: relative; /* Posisi relatif untuk mempermudah pengaturan posisi gambar */
 }
 
 /* Frame gambar */
@@ -97,18 +99,6 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 220px;
   overflow: hidden; /* Menyembunyikan elemen yang melebihi batas frame */
-}
-
-/* Gambar ke-11 dan ke-13 */
-.gallery .image-frame:nth-child(11) {
-  grid-column: 2 / 3; /* Menempatkan gambar ke-11 di kolom tengah */
-  grid-row: 4; /* Memastikan gambar ke-11 berada di baris ke-4 */
-}
-
-.gallery .image-frame:nth-child(13) {
-  grid-column: 2 / 3; /* Memastikan gambar ke-13 berada di kolom tengah */
-  grid-row: 5; /* Menempatkan gambar ke-13 di baris setelah gambar ke-11 */
-  justify-self: center; /* Memastikan gambar berada di tengah */
 }
 
 /* Gambar di dalam frame */
@@ -129,4 +119,44 @@ body {
 
 .image-frame img:hover {
   transform: scale(1.1); /* Gambar memperbesar saat di-hover */
+}
+
+/* Media Query untuk Tablet */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5em;
+    padding: 15px;
+  }
+
+  .folder {
+    font-size: 1.2em;
+    padding: 20px 25px;
+  }
+
+  .folders {
+    gap: 15px;
+  }
+}
+
+/* Media Query untuk Handphone */
+@media (max-width: 480px) {
+  .title {
+    font-size: 2em;
+    padding: 10px;
+  }
+
+  .folder {
+    font-size: 1em;
+    padding: 15px 20px;
+    width: 100%; /* Folder memenuhi lebar layar */
+  }
+
+  .gallery {
+    grid-template-columns: 1fr; /* Menampilkan 1 kolom */
+    gap: 15px;
+  }
+
+  .image-frame img {
+    height: 150px; /* Mengurangi tinggi gambar pada layar kecil */
+  }
 }
